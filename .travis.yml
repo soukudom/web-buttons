@@ -1,4 +1,4 @@
-nguage: sh
+language: sh
 os: linux
 arch: amd64
 dist: bionic
