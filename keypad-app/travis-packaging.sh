@@ -34,10 +34,10 @@ profiles: {default: {host_ip: 127.0.0.1, host_port: 8443, auth_keys: cm9vdDo=, a
 #	echo "$FILE3"
 #  echo "$FILE4"
 #	echo "are present. Commencing packaging"
-        docker build --tag iox-web web-app
-        rm -rf iox-web-aarch64 && mkdir iox-web-aarch64
+        docker build --tag iox-web keypad-app
+        rm -rf keypad-app/iox-web-aarch64 && mkdir keypad-app/iox-web-aarch64
         docker save -o rootfs.tar iox-web
-        mv rootfs.tar iox-web-aarch64/
+        mv rootfs.tar keypad-app/iox-web-aarch64/
 #else
 #	echo "One or more of the files not present. Cannot create container"
 #fi
@@ -64,6 +64,6 @@ app:
     rootfs: rootfs.tar
     target: ["python3","/app/app.py"]' > package.yaml
 
-mv package.yaml iox-web-aarch64/
+mv package.yaml keypad-app/iox-web-aarch64/
 #cp package_config.ini iox-web-aarch64
-ioxclient package iox-web-aarch64
+ioxclient package keypad-app/iox-web-aarch64

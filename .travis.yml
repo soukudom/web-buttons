@@ -8,12 +8,12 @@ services:
     - docker
 
 script: 
-    - chmod +x travis-packaging.sh
-    - sh travis-packaging.sh
+    - chmod +x keypad-app/travis-packaging.sh
+    - sh keypad-app/travis-packaging.sh
 
 deploy:
     provider: releases
-    file: /home/travis/build/soukudom/web-buttons/iox-web-aarch64/package.tar
+    file: /home/travis/build/soukudom/web-buttons/keypad-app/iox-web-aarch64/package.tar
     skip_cleanup: true
     token: $GITHUB_TOKEN
     overwrite: true
