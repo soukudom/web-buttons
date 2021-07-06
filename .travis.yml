@@ -17,9 +17,9 @@ deploy:
     skip_cleanup: true
     token: $GITHUB_TOKEN
     overwrite: true
-    on:
-        tags: true
-        branch: master
+#    on:
+#        tags: true
+#        branch: master
 
 notifications:
     email: false
