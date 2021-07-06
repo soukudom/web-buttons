@@ -1,0 +1,25 @@
+nguage: sh
+os: linux
+arch: amd64
+dist: bionic
+sudo: required
+
+services:
+    - docker
+
+script: 
+    - chmod +x travis-packaging.sh
+    - sh travis-packaging.sh
+
+deploy:
+    provider: releases
+    file: /home/travis/build/soukudom/web-buttons/iox-web-aarch64/package.tar
+    skip_cleanup: true
+    token: $GITHUB_TOKEN
+    overwrite: true
+    on:
+        tags: true
+        branch: master
+
+notifications:
+    email: false
