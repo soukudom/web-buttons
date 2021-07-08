@@ -10,7 +10,15 @@
 #    IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
 #    or implied.
 
-FROM python:3.8.2
+FROM multiarch/qemu-user-static as qemu
+FROM arm64v8/alpine:3.7
+COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
+# FROM python:3.8.2
+RUN apk update
+RUN apk add --upgrade apk-tools
+RUN apk upgrade --available
+RUN apk add --no-cache python3 && \
+    pip3 install --upgrade pip setuptools
 
 RUN mkdir /app
 WORKDIR /app
