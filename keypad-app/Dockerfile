@@ -23,7 +23,7 @@ RUN apk add --no-cache python3 && \
 RUN mkdir /app
 WORKDIR /app
 ADD . /app/
-RUN pip install -r /app/requirements.txt
+RUN pip3 install -r /app/requirements.txt
 
-EXPOSE 5001
-CMD ["python", "/app/app.py"]
+#EXPOSE 5001
+CMD ["python3", "/app/app.py"]

@@ -66,4 +66,4 @@ app:
 
 mv package.yaml keypad-app/iox-web-aarch64/
 #cp package_config.ini iox-web-aarch64
-keypad-app/ioxclient package keypad-app/iox-web-aarch64
+ioxclient package keypad-app/iox-web-aarch64
