@@ -47,7 +47,7 @@ echo 'descriptor-schema-version: "2.7"
 info:
   name: "iox_web_app"
   description: "Web keypad app"
-  version: "1.0"
+  version: "2.0"
   author-link: "http://www.cisco.com"
   author-name: "Cisco"
 
